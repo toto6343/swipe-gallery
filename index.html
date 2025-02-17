@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>스와이프 갤러리</title>
+	<link rel="icon" href="img/favicon.ico" type="image/x-icon">	
+	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="css/style.css">	
+	<script src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
+	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</head>
+<body>	
+
+	<div class="wrap">
+		<h1>WH's <span>Gallery</span></h1>
+
+		<ul class="auto">
+			<li class="btnStart"><i class="fas fa-play"></i></li>
+			<li class="btnStop"><i class="fas fa-pause"></i></li>
+		</ul>
+
+<div class="swiper-wrapper">
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/pic1.png">
+				<h2>도시의 저녁</h2>
+				<p>도시의 고층 건물들이 저녁 하늘과 어우러져 아름다운 풍경을 만들어냅니다. 빛나는 유리창과 어두운 하늘이 조화를 이루며, 현대 도시의 매력을 한껏 드러냅니다.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/pic2.png">
+				<h2>미래의 건축</h2>
+				<p>독특한 디자인의 건축물들이 모여 있는 이 장면은 미래 지향적인 도시의 모습을 보여줍니다. 각기 다른 형태와 재료가 어우러져 시각적으로 매력적인 구성을 만들어냅니다.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/pic3.png">
+				<h2>도시의 심장</h2>
+				<p>이 사진은 도시의 중심부를 바라보는 시점에서 촬영되었습니다. 다양한 건물들이 서로 다른 높이와 형태로 도시의 역동성을 표현하고 있습니다.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/pic4.png">
+				<h2>빛과 그림자</h2>
+				<p>건물의 유리창에 비치는 빛과 그림자가 만들어내는 독특한 패턴이 인상적입니다. 이 사진은 도시의 복잡한 구조와 아름다움을 동시에 보여줍니다.</p>
+			</div>
+		</div>
+	</div>
+	<div class="swiper-slide">
+		<div class="inner">
+			<div class="con">
+				<img src="img/pic5.png">
+				<h2>현대적 조화</h2>
+				<p>서로 다른 스타일의 건축물들이 조화를 이루며 도시의 경관을 형성하고 있습니다. 이 사진은 현대 건축의 다양성과 아름다움을 잘 보여줍니다.</p>
+			</div>
+		</div>
+	</div>
+</div>
+
+		<!-- 좌우버튼 -->
+		<div class="swiper-button-next"></div>
+		<div class="swiper-button-prev"></div>
+		
+		<!-- 페이징 버튼 -->
+		<div class="swiper-pagination"></div>
+	</div>
+
+	<script>
+		const swiper = new Swiper('.wrap',{	
+			direction: "horizontal",
+			loop: true,						
+			pagination: {
+				el: '.swiper-pagination',
+				type: 'fraction'
+			},	
+			navigation : {				
+				nextEl: '.swiper-button-next',
+				prevEl: '.swiper-button-prev',			
+			},
+			spaceBetween: 0,
+			slidesPerView: "auto",
+			grabCursor: true,
+			centeredSlides :true,
+			speed:1000,
+			effect:"coverflow",	
+			coverflowEffect: {
+				rotate: 50,
+				stretch: -100,
+				depth: 400,
+				modifier: 1,
+				slideShadows: false,
+			},
+			autoplay: {
+				delay:1000,		
+				disableOnInteraction : true
+			}	
+		});
+
+		// .btnStart 요소를 찾아서 btnStart에 저장
+		const btnStart = document.querySelector(".btnStart");
+		// .btnStop 요소를 찾아서 btnStop에 저장
+		const btnStop = document.querySelector(".btnStop");
+
+		//btnStart버튼을 클릭시 자동롤링 시작
+		btnStart.addEventListener("click",()=>{
+			swiper.autoplay.start();
+		});
+
+		//btnStart버튼을 클릭시 자동롤링 정지
+		btnStop.addEventListener("click",()=>{
+			swiper.autoplay.stop();
+		});
+	</script>	
+</body>
+</html>
