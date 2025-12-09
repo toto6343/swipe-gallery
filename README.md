@@ -73,7 +73,7 @@ advanced-swiper-gallery/
 1. **저장소 클론**
 
 ```bash
-git clone https://github.com/yourusername/advanced-swiper-gallery.git
+git clone https://github.com/toto6343/advanced-swiper-gallery.git
 cd advanced-swiper-gallery
 ```
 
